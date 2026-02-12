@@ -1,0 +1,12 @@
+accelerate launch sd-scripts/train_network.py ^
+ --pretrained_model_name_or_path="models/v1-5-pruned.safetensors" ^
+ --train_data_dir="data" ^
+ --resolution=512,512 ^
+ --network_module=networks.lora ^
+ --network_dim=16 ^
+ --network_alpha=16 ^
+ --learning_rate=1e-4 ^
+ --train_batch_size=4 ^
+ --max_train_epochs=3 ^
+ --mixed_precision=fp16 ^
+ --save_model_as=safetensors
