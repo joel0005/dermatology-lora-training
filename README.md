@@ -1,9 +1,9 @@
-Dermatology Clinical LoRA – Stable Diffusion Fine-Tuning
-Overview
+**Dermatology Clinical LoRA – Stable Diffusion Fine-Tuning**
+**Overview**
 
 This project demonstrates parameter-efficient fine-tuning (LoRA) of Stable Diffusion v1.5 to generate synthetic dermatological pathology images.
 
-The objective was to:
+**The objective was to:**
 
 Learn domain-specific visual features (inflammatory lesions, erythema, pustules)
 
@@ -17,41 +17,41 @@ The resulting LoRA adapter enables controlled synthesis of dermatological imager
 
 Model Architecture
 
-Base Model:
+**Base Model:**
 Stable Diffusion v1.5 (pruned)
 
-Fine-Tuning Method:
+**Fine-Tuning Method:**
 LoRA (Low-Rank Adaptation)
 
-Training Framework:
+**Training Framework:**
 kohya_ss (sd-scripts)
 
-Image Resolution:
+**Image Resolution:**
 512 × 512
 
-LoRA Rank (network_dim):
+**LoRA Rank (network_dim):**
 16
 
-Alpha:
+**Alpha:**
 16
 
-Learning Rate:
+**Learning Rate:**
 1e-4
 
-Batch Size:
+**Batch Size:**
 4
 
-Epochs:
+**Epochs:**
 3
 
-Mixed Precision:
+**Mixed Precision:**
 FP16
 
 Why LoRA Instead of Full Fine-Tuning?
 
 Full fine-tuning modifies hundreds of millions of parameters, increasing memory usage and deployment size.
 
-LoRA:
+**LoRA:
 
 Freezes base model weights
 
@@ -59,9 +59,9 @@ Injects low-rank matrices into attention layers
 
 Reduces trainable parameters dramatically
 
-Produces lightweight adapters (~5–50MB)
+Produces lightweight adapters (~5–50MB)**
 
-This allows:
+**This allows:**
 
 Faster experimentation
 
@@ -75,14 +75,14 @@ Training Framework: kohya_ss (sd-scripts)
 
 Training was performed using kohya_ss, a widely adopted Stable Diffusion fine-tuning framework.
 
-Repository:
+**Repository:**
 https://github.com/kohya-ss/sd-scripts
 
-To clone:
+**To clone:**
 
 git clone https://github.com/kohya-ss/sd-scripts.git
 
-Why kohya_ss?
+**Why kohya_ss?**
 
 Native LoRA support
 
@@ -96,7 +96,7 @@ Compatible with DreamBooth + LoRA workflows
 
 kohya_ss enables reproducible, controlled, and production-aligned fine-tuning.
 
-Dataset Structure
+**Dataset Structure**
 data/
 └── 1_derm/
     ├── image1.jpg
@@ -111,10 +111,10 @@ Example caption:
 
 clinical dermatology photograph, severe inflammatory skin lesions, erythema, pustules, medical photography
 
-Training Command
+**Training Command**
 
 See train_command.txt for the full training command used.
 
-Ethical Disclaimer
+**Ethical Disclaimer**
 
 This project generates synthetic dermatological imagery for research and experimentation purposes only.
